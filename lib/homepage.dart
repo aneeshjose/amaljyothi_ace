@@ -1,6 +1,7 @@
 import 'package:ace/utils/size.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import "package:charcode/charcode.dart";
 
 class WebMyHomePage extends StatefulWidget {
   @override
@@ -35,8 +36,8 @@ class _WebMyHomePageState extends State<WebMyHomePage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              child: Image.network(
-                'https://ajce.in/ce/images/Logo.png',
+              child: Image.asset(
+                'web/assets/ace/ace-black.png',
                 height: 50,
               ),
             ),
@@ -58,6 +59,14 @@ class _WebMyHomePageState extends State<WebMyHomePage> {
 
   get _carousalForeground => BoxDecoration(
       image: DecorationImage(image: AssetImage('web/assets/ace/border.png')));
+
+  get _aceImage => Image.asset('web/assets/ace/ace-featured.jpg');
+
+  get _ajceLogo => Image.asset('web/assets/ace/ajce-emblem.png');
+
+  get _easyChair => Image.asset('web/assets/ace/easychair.png');
+
+  get _civilLogo => Image.asset('web/assets/ace/civil-logo.jpg');
 
   @override
   void initState() {
@@ -84,6 +93,79 @@ class _WebMyHomePageState extends State<WebMyHomePage> {
                 items: _images,
               ),
             ),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    child: _aceImage,
+                    height: size.greater / 10,
+                  ),
+                  Container(
+                    width: size.greater / 2,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            'ACE 2020',
+                            style: TextStyle(fontSize: size.greater / 30),
+                          ),
+                          Text(
+                            'National  Conference on Advances in Civil Engineering',
+                            style: TextStyle(fontSize: size.greater / 60),
+                          ),
+                          Text(
+                            '28th & 29th May 2020',
+                            style: TextStyle(fontSize: size.greater / 60),
+                          ),
+                          Text(
+                            'Amal Jyothi College of Engineering',
+                            style: TextStyle(fontSize: size.greater / 60),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: _ajceLogo,
+                    height: size.greater / 10,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: size.lower / 10),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    child: _easyChair,
+                    height: size.greater / 10,
+                  ),
+                  Container(
+                    width: size.greater / 2,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            'Abstact Submission deadline: 20th March 2020',
+                            style: TextStyle(fontSize: size.greater / 60),
+                          ),
+                          Text(
+                            'Registration deadline: 10th April 2020',
+                            style: TextStyle(fontSize: size.greater / 60),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: _civilLogo,
+                    height: size.greater / 10,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
